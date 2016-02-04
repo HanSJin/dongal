@@ -50,6 +50,7 @@
 		4976AAF41C6223E900D36B29 /* SettingKeywordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4976AAF31C6223E900D36B29 /* SettingKeywordVC.m */; };
 		4976AAF71C6225FF00D36B29 /* CollegeObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 4976AAF61C6225FF00D36B29 /* CollegeObj.m */; };
 		497FE2EC1C62ECD6009D5ECE /* MemberCollegeObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 497FE2EB1C62ECD6009D5ECE /* MemberCollegeObj.m */; };
+		497FE2F01C6340ED009D5ECE /* NoticeDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 497FE2EF1C6340ED009D5ECE /* NoticeDetailVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,8 @@
 		4976AAF61C6225FF00D36B29 /* CollegeObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeObj.m; sourceTree = "<group>"; };
 		497FE2EA1C62ECD6009D5ECE /* MemberCollegeObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberCollegeObj.h; sourceTree = "<group>"; };
 		497FE2EB1C62ECD6009D5ECE /* MemberCollegeObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberCollegeObj.m; sourceTree = "<group>"; };
+		497FE2EE1C6340ED009D5ECE /* NoticeDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeDetailVC.h; sourceTree = "<group>"; };
+		497FE2EF1C6340ED009D5ECE /* NoticeDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeDetailVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,6 +384,8 @@
 			children = (
 				4976AA751C61D12000D36B29 /* NoticeVC.h */,
 				4976AA761C61D12000D36B29 /* NoticeVC.m */,
+				497FE2EE1C6340ED009D5ECE /* NoticeDetailVC.h */,
+				497FE2EF1C6340ED009D5ECE /* NoticeDetailVC.m */,
 			);
 			name = Tap1;
 			sourceTree = "<group>";
@@ -606,6 +611,7 @@
 				4976AA1B1C61CEA500D36B29 /* main.m in Sources */,
 				4976AAE11C61F0F300D36B29 /* UIImageView+HighlightedWebCache.m in Sources */,
 				4976AADD1C61F0F300D36B29 /* UIButton+WebCache.m in Sources */,
+				497FE2F01C6340ED009D5ECE /* NoticeDetailVC.m in Sources */,
 				4976AA661C61CF7A00D36B29 /* SingletonData.m in Sources */,
 				4976AA801C61D13700D36B29 /* SettingVC.m in Sources */,
 				4976AA701C61D05600D36B29 /* AppDelegateMethods.m in Sources */,
