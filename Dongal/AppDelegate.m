@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "AppDelegateMethods.h"
+
+#import "Constants.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.viewControllers = [AppDelegateMethods initTabbarViewControllerArray];
+    
+    // Tab bar Customize
+    self.tabBarController.tabBar.barTintColor = BLACK_COLOR; // color
+    self.tabBarController.tabBar.tintColor = GREENT_COLOR;  // UIColor
+    
+    // init title, icon of Tabbar
+    [AppDelegateMethods initTabbarViewControllerIcons:self.tabBarController.tabBar];
+    [AppDelegateMethods initTabbarViewControllerTitle:self.tabBarController.tabBar];
+    
+    self.window.rootViewController = self.tabBarController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -36,6 +54,9 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    if ([AppDelegateMethods checkLoginSession]) {
+        
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

@@ -14,7 +14,7 @@
 
 + (NSData *)myConnection_api_get:(NSString *)connAPI connParam:(NSString *)connParam {
     NSString *param = [connParam stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@%@", TWENTY_DOMAIN, connAPI, param];
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@%@", DONGAL_DOMAIN, connAPI, param];
     NSLog(urlStr);
     NSURL *url = [NSURL URLWithString:urlStr];
     

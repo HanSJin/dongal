@@ -13,7 +13,7 @@
 
 + (NSData *)myConnection_test:(NSString *)connectionType connectionParam:(NSString *)connectionParam {
     
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@", TWENTY_DOMAIN, connectionType];
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@", DONGAL_DOMAIN, connectionType];
     NSURL *url = [NSURL URLWithString:urlStr];
     
     // request 작성 - GET

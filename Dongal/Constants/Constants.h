@@ -9,67 +9,29 @@
 
 // DOMAIN
 //#define TWENTY_DOMAIN                   @"http://1.255.54.157"
-#define TWENTY_DOMAIN                   @"http://api.20s.kr/v1"
+#define DONGAL_DOMAIN                   @"http://14.63.227.27"
 //http:/.20s.kr/editor?mb_no=1
 
 
 // API
 #define CONNECT_TEST                    @"/test"
 
-// API ADMIN
-#define CONNECT_ADMIN_CERT              @"/admin_app_cert?"
-#define CONNECT_ADMIN_MEMBERS           @"/admin_app_members?"
-#define CONNECT_ADMIN_POSTS             @"/admin_app_post_list?"
-#define CONNECT_ADMIN_EDITOR_POST       @"/admin_app_editor_post?"
-#define CONNECT_ADMIN_COMMENT           @"/admin_app_comment_list?"
-#define CONNECT_ADMIN_INTEREST          @"/admin_app_interest_list?"
+#define CONNECT_GET_NOTICE              @"/notice.php?"
+#define CONNECT_GET_NOTICE_LIKE         @"/notice_like.php?"
+#define CONNECT_GET_COLLEGE             @"/college.php?"
+#define CONNECT_GET_ALARM               @"/alarm.php?"
+#define CONNECT_GET_MB_COLLEGE          @"/mb_college.php?"
+#define CONNECT_GET_MB_ALARM            @"/mb_alarm.php?"
+#define CONNECT_GET_KEYWORD             @"/keyword.php?"
+#define CONNECT_GET_KEYWORD_STATE       @"/keyword_state.php?"
 
-
-#define CONNECT_GET_NEWS                @"/news?"
-#define CONNECT_GET_DETAIL              @"/detail?"
-#define CONNECT_GET_SCRAP               @"/scraps?"
-#define CONNECT_GET_COMMENT             @"/comment?"
-#define CONNECT_GET_MEMBER              @"/member?"
-#define CONNECT_GET_UNIV                @"/university?"
-#define CONNECT_GET_MAJOR               @"/university_major?"
-#define CONNECT_GET_CERTIFY             @"/certify?"
-#define CONNECT_GET_EMAIL               @"/check_email?"
-#define CONNECT_GET_PROFILE             @"/profile?"
-#define CONNECT_GET_EDITOR              @"/editor?"
-#define CONNECT_GET_THUMB               @"/thumb?"
-#define CONNECT_GET_NOTICE              @"/notice?"
-#define CONNECT_GET_FAQ                 @"/faq?"
-#define CONNECT_GET_U_CAFETERIA         @"/university_cafeteria?"
-#define CONNECT_GET_U_LIBRARY           @"/university_library?"
-#define CONNECT_GET_U_NOTICE            @"/university_notice?"
-#define CONNECT_GET_SUPPORT             @"/support?"
-#define CONNECT_GET_INTEREST            @"/interest?"
-#define CONNECT_GET_PUSH                @"/push_state?"
-#define CONNECT_GET_POSTS               @"/posts?"
-#define CONNECT_GET_FORMAT              @"/news_format?"
-#define CONNECT_GET_INIT                @"/init?"
-
-#define CONNECT_GET_SEARCH              @"/search?"
-#define CONNECT_GET_NICKNAME            @"/check_nickname?"
-#define CONNECT_GET_VERSION             @"/version?"
-
-#define CONNECT_POST_SCRAP              @"/scraps"
-#define CONNECT_POST_SHARE              @"/share"
-#define CONNECT_POST_COMMENT            @"/comment"
-#define CONNECT_POST_GOOD               @"/good"
-#define CONNECT_POST_MEMBER             @"/member"
-#define CONNECT_POST_MEMBER_UPDATE      @"/member"
-#define CONNECT_POST_MEMBER_THUMBS      @"/member_thumbs"
-#define CONNECT_POST_REGISTER           @"/register"
-#define CONNECT_POST_LOGIN              @"/login"
-#define CONNECT_POST_EDITOR             @"/editor"
-#define CONNECT_POST_QNA                @"/qna"
-#define CONNECT_POST_PUSH               @"/push_state"
-#define CONNECT_POST_PUSH_TOKEN         @"/push_token_ios"
-#define CONNECT_POST_INTEREST           @"/interest"
-#define CONNECT_POST_FINDPASSWORD       @"/lost_password"
-#define CONNECT_POST_SECESSION          @"/secession"
-#define CONNECT_POST_POSTS              @"/posts"
+#define CONNECT_POST_LOGIN              @"/login.php"
+#define CONNECT_POST_LIKE               @"/like.php"
+#define CONNECT_POST_COLLEGE_UPDATE     @"/college_update.php"
+#define CONNECT_POST_MB_COLLEGE         @"/mb_college.php"
+#define CONNECT_POST_MB_ALARM           @"/mb_alarm.php"
+#define CONNECT_POST_KEYWORD            @"/keyword.php"
+#define CONNECT_POST_KEYWORD_STATE      @"/keyword_state.php"
 
 
 
@@ -141,23 +103,23 @@
 
 
 // FONT - AppleSDGothicNeo
-//#define FONT_T                    @"AppleSDGothicNeo-Thin"
-//#define FONT_L                    @"AppleSDGothicNeo-Light"
-//#define FONT_R                    @"AppleSDGothicNeo-Regular"
-//#define FONT_M                    @"AppleSDGothicNeo-Medium"
-//#define FONT_SB                   @"AppleSDGothicNeo-SemiBold"
-//#define FONT_B                    @"AppleSDGothicNeo-Bold"
+#define FONT_T                    @"AppleSDGothicNeo-Thin"
+#define FONT_L                    @"AppleSDGothicNeo-Light"
+#define FONT_R                    @"AppleSDGothicNeo-Regular"
+#define FONT_M                    @"AppleSDGothicNeo-Medium"
+#define FONT_SB                   @"AppleSDGothicNeo-SemiBold"
+#define FONT_B                    @"AppleSDGothicNeo-Bold"
 
 // FONT - 윤고딕
-#define FONT_Y_320              @"YDVYGO32"
-#define FONT_Y_330              @"YDVYGO33"
-#define FONT_Y_320MJ            @"YDVYMjO32"
-#define FONT_Y_330MJ            @"YDVYMjO33"
-
-#define FONT_Y_720              @"YoonGothicPro720"
-#define FONT_Y_730              @"YoonGothicPro730"
-#define FONT_Y_740              @"YoonGothicPro740"
-#define FONT_Y_760              @"YoonGothicPro760"
+//#define FONT_Y_320              @"YDVYGO32"
+//#define FONT_Y_330              @"YDVYGO33"
+//#define FONT_Y_320MJ            @"YDVYMjO32"
+//#define FONT_Y_330MJ            @"YDVYMjO33"
+//
+//#define FONT_Y_720              @"YoonGothicPro720"
+//#define FONT_Y_730              @"YoonGothicPro730"
+//#define FONT_Y_740              @"YoonGothicPro740"
+//#define FONT_Y_760              @"YoonGothicPro760"
 
 
 #define CS_ALERT(title,msg) UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title\

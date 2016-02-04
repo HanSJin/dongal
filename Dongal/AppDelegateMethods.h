@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface AppDelegateMethods : NSObject
 
++ (NSArray *)initTabbarViewControllerArray;
++ (void)initTabbarViewControllerTitle:(UITabBar *)tabbar;
++ (void)initTabbarViewControllerIcons:(UITabBar *)tabbar;
+
++ (BOOL)checkLoginSession;
 @end

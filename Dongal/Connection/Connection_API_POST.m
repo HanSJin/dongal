@@ -19,7 +19,7 @@
     //    NSLog(@"jsonData as string:\n%@", postData);
     
     
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@", TWENTY_DOMAIN, connAPI];
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@", DONGAL_DOMAIN, connAPI];
     NSURL *url = [NSURL URLWithString:urlStr];
     
     

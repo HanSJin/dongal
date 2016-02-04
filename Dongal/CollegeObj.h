@@ -10,4 +10,9 @@
 
 @interface CollegeObj : NSObject
 
+@property (nonatomic, strong) NSString *college_id;
+@property (nonatomic, strong) NSString *college_title;
+@property (nonatomic, strong) NSString *college_name;
+
+- (instancetype)initWithDictionary:(NSMutableDictionary *)dic;
 @end
