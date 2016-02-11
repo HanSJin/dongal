@@ -51,6 +51,10 @@
 		4976AAF71C6225FF00D36B29 /* CollegeObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 4976AAF61C6225FF00D36B29 /* CollegeObj.m */; };
 		497FE2EC1C62ECD6009D5ECE /* MemberCollegeObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 497FE2EB1C62ECD6009D5ECE /* MemberCollegeObj.m */; };
 		497FE2F01C6340ED009D5ECE /* NoticeDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 497FE2EF1C6340ED009D5ECE /* NoticeDetailVC.m */; };
+		497FE2FA1C648B9C009D5ECE /* TOActivityChrome.m in Sources */ = {isa = PBXBuildFile; fileRef = 497FE2F31C648B9C009D5ECE /* TOActivityChrome.m */; };
+		497FE2FB1C648B9C009D5ECE /* TOActivitySafari.m in Sources */ = {isa = PBXBuildFile; fileRef = 497FE2F51C648B9C009D5ECE /* TOActivitySafari.m */; };
+		497FE2FC1C648B9C009D5ECE /* TOWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 497FE2F71C648B9C009D5ECE /* TOWebViewController.m */; };
+		497FE2FD1C648B9C009D5ECE /* UIImage+TOWebViewControllerIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = 497FE2F91C648B9C009D5ECE /* UIImage+TOWebViewControllerIcons.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +165,14 @@
 		497FE2EB1C62ECD6009D5ECE /* MemberCollegeObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberCollegeObj.m; sourceTree = "<group>"; };
 		497FE2EE1C6340ED009D5ECE /* NoticeDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeDetailVC.h; sourceTree = "<group>"; };
 		497FE2EF1C6340ED009D5ECE /* NoticeDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeDetailVC.m; sourceTree = "<group>"; };
+		497FE2F21C648B9C009D5ECE /* TOActivityChrome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOActivityChrome.h; path = Libraries/TOWebViewController/TOActivityChrome.h; sourceTree = "<group>"; };
+		497FE2F31C648B9C009D5ECE /* TOActivityChrome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOActivityChrome.m; path = Libraries/TOWebViewController/TOActivityChrome.m; sourceTree = "<group>"; };
+		497FE2F41C648B9C009D5ECE /* TOActivitySafari.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOActivitySafari.h; path = Libraries/TOWebViewController/TOActivitySafari.h; sourceTree = "<group>"; };
+		497FE2F51C648B9C009D5ECE /* TOActivitySafari.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOActivitySafari.m; path = Libraries/TOWebViewController/TOActivitySafari.m; sourceTree = "<group>"; };
+		497FE2F61C648B9C009D5ECE /* TOWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOWebViewController.h; path = Libraries/TOWebViewController/TOWebViewController.h; sourceTree = "<group>"; };
+		497FE2F71C648B9C009D5ECE /* TOWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOWebViewController.m; path = Libraries/TOWebViewController/TOWebViewController.m; sourceTree = "<group>"; };
+		497FE2F81C648B9C009D5ECE /* UIImage+TOWebViewControllerIcons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+TOWebViewControllerIcons.h"; path = "Libraries/TOWebViewController/UIImage+TOWebViewControllerIcons.h"; sourceTree = "<group>"; };
+		497FE2F91C648B9C009D5ECE /* UIImage+TOWebViewControllerIcons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+TOWebViewControllerIcons.m"; path = "Libraries/TOWebViewController/UIImage+TOWebViewControllerIcons.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +344,7 @@
 		4976AA6C1C61CFAE00D36B29 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				497FE2F11C648B89009D5ECE /* TOWebViewController */,
 				4976AA811C61D17B00D36B29 /* SDWebImage */,
 			);
 			name = Libraries;
@@ -450,6 +463,21 @@
 				4976AAEA1C6215A800D36B29 /* NoticeCell.m */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		497FE2F11C648B89009D5ECE /* TOWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				497FE2F21C648B9C009D5ECE /* TOActivityChrome.h */,
+				497FE2F31C648B9C009D5ECE /* TOActivityChrome.m */,
+				497FE2F41C648B9C009D5ECE /* TOActivitySafari.h */,
+				497FE2F51C648B9C009D5ECE /* TOActivitySafari.m */,
+				497FE2F61C648B9C009D5ECE /* TOWebViewController.h */,
+				497FE2F71C648B9C009D5ECE /* TOWebViewController.m */,
+				497FE2F81C648B9C009D5ECE /* UIImage+TOWebViewControllerIcons.h */,
+				497FE2F91C648B9C009D5ECE /* UIImage+TOWebViewControllerIcons.m */,
+			);
+			name = TOWebViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,8 +611,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4976AADE1C61F0F300D36B29 /* UIImage+GIF.m in Sources */,
+				497FE2FD1C648B9C009D5ECE /* UIImage+TOWebViewControllerIcons.m in Sources */,
 				4976AADB1C61F0F300D36B29 /* SDWebImageManager.m in Sources */,
 				4976AAE21C61F0F300D36B29 /* UIImageView+WebCache.m in Sources */,
+				497FE2FA1C648B9C009D5ECE /* TOActivityChrome.m in Sources */,
 				4976AAE71C61F27D00D36B29 /* NoticeObj.m in Sources */,
 				4976AADA1C61F0F300D36B29 /* SDWebImageDownloaderOperation.m in Sources */,
 				4976AAF41C6223E900D36B29 /* SettingKeywordVC.m in Sources */,
@@ -592,6 +622,7 @@
 				4976AAD61C61F0F300D36B29 /* SDImageCache.m in Sources */,
 				4976AAD41C61F0F300D36B29 /* MKAnnotationView+WebCache.m in Sources */,
 				4976AA5A1C61CF6600D36B29 /* Connection_API_POST.m in Sources */,
+				497FE2FB1C648B9C009D5ECE /* TOActivitySafari.m in Sources */,
 				4976AADF1C61F0F300D36B29 /* UIImage+MultiFormat.m in Sources */,
 				4976AA691C61CF8200D36B29 /* Customs.m in Sources */,
 				4976AA5B1C61CF6600D36B29 /* Connection_API_TEST.m in Sources */,
@@ -616,6 +647,7 @@
 				4976AA801C61D13700D36B29 /* SettingVC.m in Sources */,
 				4976AA701C61D05600D36B29 /* AppDelegateMethods.m in Sources */,
 				4976AA7A1C61D12900D36B29 /* FavoriteVC.m in Sources */,
+				497FE2FC1C648B9C009D5ECE /* TOWebViewController.m in Sources */,
 				4976AA591C61CF6600D36B29 /* Connection_API_GET.m in Sources */,
 				4976AAD91C61F0F300D36B29 /* SDWebImageDownloader.m in Sources */,
 				497FE2EC1C62ECD6009D5ECE /* MemberCollegeObj.m in Sources */,

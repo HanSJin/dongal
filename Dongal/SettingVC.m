@@ -98,7 +98,8 @@
         toVC = [[SettingAlarmVC alloc] init];
     else if (indexPath.row == 2)
         toVC = [[SettingKeywordVC alloc] init];
-//    toVC.hidesBottomBarWhenPushed = YES;
+    //    toVC.hidesBottomBarWhenPushed = YES;
+    toVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:toVC animated:YES];
         
 }

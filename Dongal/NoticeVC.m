@@ -10,6 +10,7 @@
 #import "NoticeObj.h"
 #import "NoticeCell.h"
 #import "NoticeDetailVC.h"
+#import "TOWebViewController.h"
 
 #import "Constants.h"
 #import "Customs.h"
@@ -117,9 +118,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NoticeObj *obj = (NoticeObj *)[noticeList objectAtIndex:indexPath.row];
-    NoticeDetailVC *toVC = [[NoticeDetailVC alloc] init];
-    toVC.detailObj = obj;
-    [self.navigationController pushViewController:toVC animated:YES];
+    TOWebViewController *webViewController = [[TOWebViewController alloc] initWithURL:[NSURL URLWithString:obj.wr_link]];
+    webViewController.pushOrPop = @"psuh";
+    webViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:webViewController animated:YES];
 }
 
 

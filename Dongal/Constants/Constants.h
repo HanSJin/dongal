@@ -18,6 +18,7 @@
 
 #define CONNECT_GET_NOTICE              @"/notice.php?"
 #define CONNECT_GET_NOTICE_LIKE         @"/notice_like.php?"
+#define CONNECT_GET_NOTICE_SEARCH       @"/notice_search.php?"
 #define CONNECT_GET_COLLEGE             @"/college.php?"
 #define CONNECT_GET_ALARM               @"/alarm.php?"
 #define CONNECT_GET_MB_COLLEGE          @"/mb_college.php?"

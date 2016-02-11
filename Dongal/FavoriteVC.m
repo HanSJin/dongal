@@ -30,15 +30,16 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    [self initDataObject];
+    [noticeTableView reloadData];
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     [self initNavigationSetting];
     [self setNoticeTableView];
-    [self initDataObject];
 }
 
 
