@@ -40,7 +40,7 @@
 #pragma mark - INIT AREA
 
 - (void)setBottomView {
-    bottomView = [Customs CSViewRect:CGRectMake(0, SCR_HEIGHT-SCR_TAB-SCR_TAB-IS_HOT_SPOT, SCR_WIDTH, SCR_TAB) backColor:GREENT_COLOR];
+    bottomView = [Customs CSViewRect:CGRectMake(0, SCR_HEIGHT-SCR_TAB-IS_HOT_SPOT, SCR_WIDTH, SCR_TAB) backColor:GREENT_COLOR];
     [self.view addSubview:bottomView];
     
     
@@ -84,7 +84,7 @@
 }
 
 - (void)setCollegeTableView {
-    keywordTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCR_WIDTH, SCR_HEIGHT-IS_HOT_SPOT-SCR_TAB)];
+    keywordTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCR_WIDTH, SCR_HEIGHT-IS_HOT_SPOT)];
     keywordTableView.delegate = self;
     keywordTableView.dataSource = self;
 //    keywordTableView.separatorColor = CLEAR_COLOR;
@@ -251,7 +251,7 @@
     
     [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
         bottomView.frame = CGRectMake(bottomView.frame.origin.x,
-                                      SCR_HEIGHT-49-IS_HOT_SPOT-(bottomeViewTextView.frame.size.height-30)-SCR_TAB,
+                                      SCR_HEIGHT-49-IS_HOT_SPOT-(bottomeViewTextView.frame.size.height-30),
                                       bottomView.frame.size.width,
                                       bottomView.frame.size.height);   //resize
         keywordTableView.frame = CGRectMake(keywordTableView.frame.origin.x,
