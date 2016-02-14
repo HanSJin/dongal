@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="162.66666666666666" y="366.83333333333331"/>
         </scene>
-        <!--NoticeVC-->
+        <!--Notice TabVC-->
         <scene sceneID="FnW-p8-zet">
             <objects>
-                <viewController storyboardIdentifier="NoticeVC" id="7xv-Wd-U3G" customClass="NoticeVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoticeTabVC" id="7xv-Wd-U3G" customClass="NoticeTabVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zvK-so-y0y"/>
                         <viewControllerLayoutGuide type="bottom" id="TL0-T2-ld5"/>

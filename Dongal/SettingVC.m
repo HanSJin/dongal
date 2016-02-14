@@ -22,6 +22,7 @@
     NSMutableArray *sectionData;
     NSMutableDictionary *keywordUse;
     NSMutableArray *keywordData;
+    NSMutableArray *keywordData_no;
     UIView *bottomView;
     UITextView *bottomeViewTextView;
 }
@@ -44,14 +45,13 @@
     [self initDataObject];
     [self setBottomView];
     
-    [self.view setBackgroundColor:WHITE_COLOR];
+    [self.view setBackgroundColor:BLACK_COLOR];
     [self.navigationController.navigationBar setBarTintColor:DONGGUK_COLOR];
     [self.navigationController.navigationBar setTintColor:WHITE_COLOR];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     
     sectionData = [[NSMutableArray alloc] init];
-    [sectionData addObject:@"내 대학 설정"];
     [sectionData addObject:@"키워드 알람 설정"];
     [sectionData addObject:@"키워드 목록"];
     
@@ -72,6 +72,7 @@
     settingTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCR_WIDTH, SCR_HEIGHT-IS_HOT_SPOT-SCR_TAB)];
     settingTableView.delegate = self;
     settingTableView.dataSource = self;
+    [settingTableView setAllowsSelection:YES];
 //    settingTableView.separatorColor = CLEAR_COLOR;
     [self.view addSubview:settingTableView];
     
@@ -85,8 +86,10 @@
     NSMutableDictionary *result = [NSJSONSerialization JSONObjectWithData:myData options:NSJSONReadingMutableContainers error:nil];
     
     keywordData = [[NSMutableArray alloc] init];
+    keywordData_no = [[NSMutableArray alloc] init];
     for (NSMutableDictionary *dic in result) {
         [keywordData addObject:[NSString stringWithFormat:@"%@", [dic objectForKey:@"keyword_txt"]]];
+        [keywordData_no addObject:[NSString stringWithFormat:@"%@", [dic objectForKey:@"keyword_no"]]];
     }
     
     myData = [ConnectionFactory connType:@"GET" connAPI:CONNECT_GET_KEYWORD_STATE connParam:params];
@@ -110,24 +113,32 @@
                                                  name:@"UIKeyboardWillHideNotification"
                                                object:nil];
     
-    bottomeViewTextView = [[UITextView alloc] initWithFrame:CGRectMake(16, 10, SCR_WIDTH-86, 30)];
+    bottomeViewTextView = [[UITextView alloc] initWithFrame:CGRectMake(16, 10, SCR_WIDTH-86-60, 30)];
     bottomeViewTextView.delegate = self;
     bottomeViewTextView.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0f];
     bottomeViewTextView.layer.cornerRadius = 5.0f;
     [bottomView addSubview:bottomeViewTextView];
     
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-    [self.view addGestureRecognizer:tap];
     
     UIButton *sendBtn = [[UIButton alloc] init];
-    sendBtn.frame = CGRectMake(SCR_WIDTH-60, 10, 50, 30);
+    sendBtn.frame = CGRectMake(SCR_WIDTH-60-60, 10, 50, 30);
     sendBtn.font = [UIFont fontWithName:FONT_L size:[UIFont systemFontSize]];
     [sendBtn setTitle:@"추 가" forState:UIControlStateNormal];
     [sendBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [sendBtn setBackgroundColor:CLEAR_COLOR];
     [sendBtn addTarget:self action:@selector(sendBtnTapped:) forControlEvents:UIControlEventTouchUpInside];
     [bottomView addSubview:sendBtn];
+    
+    
+    UIButton *cancelBtn = [[UIButton alloc] init];
+    cancelBtn.frame = CGRectMake(SCR_WIDTH-60, 10, 50, 30);
+    cancelBtn.font = [UIFont fontWithName:FONT_L size:[UIFont systemFontSize]];
+    [cancelBtn setTitle:@"취 소" forState:UIControlStateNormal];
+    [cancelBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [cancelBtn setBackgroundColor:CLEAR_COLOR];
+    [cancelBtn addTarget:self action:@selector(dismissKeyboard) forControlEvents:UIControlEventTouchUpInside];
+    [bottomView addSubview:cancelBtn];
 }
 
 
@@ -146,8 +157,6 @@
     if (section == 0)
         return 1;
     else if (section == 1)
-        return 1;
-    else if (section == 2)
         return keywordData.count;
     else
         return 0;
@@ -169,16 +178,7 @@
         [subView removeFromSuperview];
     
     if (indexPath.section == 0) {
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
-        UILabel *textLabel = [Customs CSLabelText:@"단과 대학 설정" LabelRect:CGRectMake(16, 16, SCR_WIDTH-100, 20) textAlign:@"left" textFont:FONT_L textSize:1 textColor:BLACK_COLOR backColor:CLEAR_COLOR];
-        [cell addSubview:textLabel];
-    }
-    
-    
-    
-    else if (indexPath.section == 1) {
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         NSString *dataStr = [NSString stringWithFormat:@"키워드 알람 받기"];
         UILabel *textLabel = [Customs CSLabelText:dataStr LabelRect:CGRectMake(16, 16, SCR_WIDTH-100, 20) textAlign:@"left" textFont:FONT_L textSize:1 textColor:BLACK_COLOR backColor:CLEAR_COLOR];
         [cell addSubview:textLabel];
@@ -193,16 +193,17 @@
             [collegeSwitch setOn:YES animated:NO];
         else
             [collegeSwitch setOn:NO animated:NO];
-        
     }
     
-    else if (indexPath.section == 2) {
-        
+    
+    
+    else if (indexPath.section == 1) {
         NSString *dataStr = [NSString stringWithFormat:@"%@", [keywordData objectAtIndex:indexPath.row]];
         UILabel *textLabel = [Customs CSLabelText:dataStr LabelRect:CGRectMake(16, 16, SCR_WIDTH-100, 20) textAlign:@"left" textFont:FONT_L textSize:1 textColor:BLACK_COLOR backColor:CLEAR_COLOR];
         [cell addSubview:textLabel];
+        
     }
-
+    
     
     return cell;
 }
@@ -227,22 +228,30 @@
     return view;
 }
 
-
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIViewController *toVC;
-    if (indexPath.row == 0)
-        toVC = [[SettingBoardVC alloc] init];
-    else if (indexPath.row == 1)
-        toVC = [[SettingAlarmVC alloc] init];
-    else if (indexPath.row == 2)
-        toVC = [[SettingKeywordVC alloc] init];
-    //    toVC.hidesBottomBarWhenPushed = YES;
-    toVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:toVC animated:YES];
-        
+    if (indexPath.row == 0 && indexPath.section == 0) {
+        UIViewController *toVC = [[SettingBoardVC alloc] init];
+        toVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:toVC animated:YES];
+    }
 }
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self removeKeyword:indexPath.row];
+        [keywordData removeObjectAtIndex:indexPath.row];
+        [keywordData_no removeObjectAtIndex:indexPath.row];
+        NSIndexPath *index = [NSIndexPath indexPathForRow:indexPath.row inSection:1];
+        [tableView deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+}
+
+
+
+
+
+
+
 
 
 - (void)changeSwitch:(id)sender{
@@ -260,15 +269,19 @@
         NSData *myData = [ConnectionFactory connType:@"POST" connAPI:CONNECT_POST_KEYWORD connParam:params];
         NSMutableDictionary *result = [NSJSONSerialization JSONObjectWithData:myData options:NSJSONReadingMutableContainers error:nil];
         
-        [settingTableView beginUpdates];
-        NSIndexPath *index = [NSIndexPath indexPathForRow:keywordData.count inSection:2];
-        [keywordData insertObject:[NSString stringWithFormat:@"%@", bottomeViewTextView.text] atIndex:keywordData.count];
-        [settingTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:index] withRowAnimation:UITableViewRowAnimationFade];
-        [settingTableView endUpdates];
         
         [self dismissKeyboard];
+        [self initDataObject];
+        [settingTableView reloadData];
         bottomeViewTextView.text = @"";
     }
+}
+
+- (void)removeKeyword:(NSInteger)index {
+    SingletonData *sharedMan = [SingletonData sharedManager];
+    NSString *params = [NSString stringWithFormat:@"uuid=%@&keyword_no=%@", sharedMan.UUID, [keywordData_no objectAtIndex:index]];
+    NSData *myData = [ConnectionFactory connType:@"POST" connAPI:CONNECT_POST_KEYWORD_DELETE connParam:params];
+    NSMutableDictionary *result = [NSJSONSerialization JSONObjectWithData:myData options:NSJSONReadingMutableContainers error:nil];
 }
 
 

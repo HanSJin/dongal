@@ -48,10 +48,54 @@
 
 #pragma mark - INIT AREA
 
+-(NSString *)getBoardName {
+    
+    NSString *board = @"";
+    if ([self.board_name isEqualToString:@"전체보기"])
+        board = @"all";
+    else if ([self.board_name isEqualToString:@"일반"])
+        board = @"normals";
+    else if ([self.board_name isEqualToString:@"학사"])
+        board = @"studies";
+    else if ([self.board_name isEqualToString:@"장학"])
+        board = @"scholars";
+    else if ([self.board_name isEqualToString:@"학술"])
+        board = @"proceedings";
+    else if ([self.board_name isEqualToString:@"입학"])
+        board = @"entrances";
+    else if ([self.board_name isEqualToString:@"국제"])
+        board = @"globals";
+    
+    else if ([self.board_name isEqualToString:@"예술대"])
+        board = @"arts";
+    else if ([self.board_name isEqualToString:@"불교대"])
+        board = @"bs";
+    else if ([self.board_name isEqualToString:@"사범대"])
+        board = @"edus";
+    else if ([self.board_name isEqualToString:@"공과대"])
+        board = @"engineers";
+    else if ([self.board_name isEqualToString:@"법과대"])
+        board = @"laws";
+    else if ([self.board_name isEqualToString:@"문과대"])
+        board = @"liberals";
+    else if ([self.board_name isEqualToString:@"바이오시스템대"])
+        board = @"lives";
+    else if ([self.board_name isEqualToString:@"약학대"])
+        board = @"pharms";
+    else if ([self.board_name isEqualToString:@"경영대"])
+        board = @"sbas";
+    else if ([self.board_name isEqualToString:@"이과대"])
+        board = @"sciences";
+    else if ([self.board_name isEqualToString:@"사회과학대"])
+        board = @"socials";
+    
+    return board;
+}
 
 - (void)initDataObject {
+    
     SingletonData *sharedMan = [SingletonData sharedManager];
-    NSString *params = [NSString stringWithFormat:@"uuid=%@&offset=%d&limit=%d", sharedMan.UUID, 0, 20];
+    NSString *params = [NSString stringWithFormat:@"uuid=%@&board=%@&offset=%d&limit=%d", sharedMan.UUID, [self getBoardName], 0, 20];
     NSData *myData = [ConnectionFactory connType:@"GET" connAPI:CONNECT_GET_NOTICE connParam:params];
     NSMutableDictionary *result = [NSJSONSerialization JSONObjectWithData:myData options:NSJSONReadingMutableContainers error:nil];
     
@@ -68,7 +112,7 @@
 }
 
 - (void)setNoticeTableView {
-    noticeTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCR_WIDTH, SCR_HEIGHT-IS_HOT_SPOT)];
+    noticeTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCR_WIDTH, SCR_HEIGHT-IS_HOT_SPOT-40-64-50)];
     noticeTableView.delegate = self;
     noticeTableView.dataSource = self;
     noticeTableView.separatorColor = CLEAR_COLOR;
@@ -139,7 +183,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             SingletonData *sharedMan = [SingletonData sharedManager];
-            NSString *params = [NSString stringWithFormat:@"uuid=%@&offset=%lu&limit=%d", sharedMan.UUID, (unsigned long)noticeList.count, 20];
+            NSString *params = [NSString stringWithFormat:@"uuid=%@&board=%@&offset=%lu&limit=%d", sharedMan.UUID, [self getBoardName], (unsigned long)noticeList.count, 20];
             NSData *myData = [ConnectionFactory connType:@"GET" connAPI:CONNECT_GET_NOTICE connParam:params];
             NSMutableDictionary *result = [NSJSONSerialization JSONObjectWithData:myData options:NSJSONReadingMutableContainers error:nil];
             
@@ -166,7 +210,7 @@
     NSData *myData = [ConnectionFactory connType:@"POST" connAPI:CONNECT_POST_LIKE connParam:params];
     
     
-    params = [NSString stringWithFormat:@"uuid=%@&offset=%d&limit=%lu", sharedMan.UUID, 0, (unsigned long)noticeList.count];
+    params = [NSString stringWithFormat:@"uuid=%@&board=%@&offset=%d&limit=%lu", sharedMan.UUID, [self getBoardName], 0, (unsigned long)noticeList.count];
     myData = [ConnectionFactory connType:@"GET" connAPI:CONNECT_GET_NOTICE connParam:params];
     NSMutableDictionary *result = [NSJSONSerialization JSONObjectWithData:myData options:NSJSONReadingMutableContainers error:nil];
     

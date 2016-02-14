@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4963EEC51C70730000A9E78B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4963EEC41C70730000A9E78B /* Launch Screen.storyboard */; };
+		4963EECB1C70F47F00A9E78B /* KHTabPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4963EEC81C70F47F00A9E78B /* KHTabPagerViewController.m */; };
+		4963EECC1C70F47F00A9E78B /* KHTabScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4963EECA1C70F47F00A9E78B /* KHTabScrollView.m */; };
+		4963EECF1C70F4A200A9E78B /* NoticeTabVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4963EECE1C70F4A200A9E78B /* NoticeTabVC.m */; };
 		4976AA1B1C61CEA500D36B29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4976AA1A1C61CEA500D36B29 /* main.m */; };
 		4976AA1E1C61CEA500D36B29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4976AA1D1C61CEA500D36B29 /* AppDelegate.m */; };
 		4976AA241C61CEA500D36B29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4976AA221C61CEA500D36B29 /* Main.storyboard */; };
@@ -76,6 +79,12 @@
 
 /* Begin PBXFileReference section */
 		4963EEC41C70730000A9E78B /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		4963EEC71C70F47F00A9E78B /* KHTabPagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHTabPagerViewController.h; path = Libraries/KHTabPagerViewController/KHTabPagerViewController.h; sourceTree = "<group>"; };
+		4963EEC81C70F47F00A9E78B /* KHTabPagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KHTabPagerViewController.m; path = Libraries/KHTabPagerViewController/KHTabPagerViewController.m; sourceTree = "<group>"; };
+		4963EEC91C70F47F00A9E78B /* KHTabScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHTabScrollView.h; path = Libraries/KHTabPagerViewController/KHTabScrollView.h; sourceTree = "<group>"; };
+		4963EECA1C70F47F00A9E78B /* KHTabScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KHTabScrollView.m; path = Libraries/KHTabPagerViewController/KHTabScrollView.m; sourceTree = "<group>"; };
+		4963EECD1C70F4A200A9E78B /* NoticeTabVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeTabVC.h; sourceTree = "<group>"; };
+		4963EECE1C70F4A200A9E78B /* NoticeTabVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeTabVC.m; sourceTree = "<group>"; };
 		4976AA161C61CEA500D36B29 /* Dongal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dongal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4976AA1A1C61CEA500D36B29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4976AA1C1C61CEA500D36B29 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -200,6 +209,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4963EEC61C70F47800A9E78B /* KHTabPagerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4963EEC71C70F47F00A9E78B /* KHTabPagerViewController.h */,
+				4963EEC81C70F47F00A9E78B /* KHTabPagerViewController.m */,
+				4963EEC91C70F47F00A9E78B /* KHTabScrollView.h */,
+				4963EECA1C70F47F00A9E78B /* KHTabScrollView.m */,
+			);
+			name = KHTabPagerViewController;
+			sourceTree = "<group>";
+		};
 		4976AA0D1C61CEA500D36B29 = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +364,7 @@
 		4976AA6C1C61CFAE00D36B29 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				4963EEC61C70F47800A9E78B /* KHTabPagerViewController */,
 				497FE2F11C648B89009D5ECE /* TOWebViewController */,
 				4976AA811C61D17B00D36B29 /* SDWebImage */,
 			);
@@ -399,6 +420,8 @@
 				4976AA761C61D12000D36B29 /* NoticeVC.m */,
 				497FE2EE1C6340ED009D5ECE /* NoticeDetailVC.h */,
 				497FE2EF1C6340ED009D5ECE /* NoticeDetailVC.m */,
+				4963EECD1C70F4A200A9E78B /* NoticeTabVC.h */,
+				4963EECE1C70F4A200A9E78B /* NoticeTabVC.m */,
 			);
 			name = Tap1;
 			sourceTree = "<group>";
@@ -634,15 +657,18 @@
 				4976AA1E1C61CEA500D36B29 /* AppDelegate.m in Sources */,
 				4976AA7D1C61D13100D36B29 /* SearchVC.m in Sources */,
 				4976AA5C1C61CF6600D36B29 /* ConnectionFactory.m in Sources */,
+				4963EECF1C70F4A200A9E78B /* NoticeTabVC.m in Sources */,
 				4976AAD71C61F0F300D36B29 /* SDWebImageCompat.m in Sources */,
 				4976AAD51C61F0F300D36B29 /* NSData+ImageContentType.m in Sources */,
 				4976AAEB1C6215A800D36B29 /* NoticeCell.m in Sources */,
 				4976AAD81C61F0F300D36B29 /* SDWebImageDecoder.m in Sources */,
 				4976AAF11C6223DF00D36B29 /* SettingAlarmVC.m in Sources */,
 				4976AA1B1C61CEA500D36B29 /* main.m in Sources */,
+				4963EECC1C70F47F00A9E78B /* KHTabScrollView.m in Sources */,
 				4976AAE11C61F0F300D36B29 /* UIImageView+HighlightedWebCache.m in Sources */,
 				4976AADD1C61F0F300D36B29 /* UIButton+WebCache.m in Sources */,
 				497FE2F01C6340ED009D5ECE /* NoticeDetailVC.m in Sources */,
+				4963EECB1C70F47F00A9E78B /* KHTabPagerViewController.m in Sources */,
 				4976AA661C61CF7A00D36B29 /* SingletonData.m in Sources */,
 				4976AA801C61D13700D36B29 /* SettingVC.m in Sources */,
 				4976AA701C61D05600D36B29 /* AppDelegateMethods.m in Sources */,

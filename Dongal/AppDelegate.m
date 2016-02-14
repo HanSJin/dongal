@@ -27,6 +27,7 @@
     // Tab bar Customize
     self.tabBarController.tabBar.barTintColor = BLACK_COLOR; // color
     self.tabBarController.tabBar.tintColor = DONGGUK_COLOR;  // UIColor
+    [self.tabBarController.tabBar setTranslucent:NO];
     
     // init title, icon of Tabbar
     [AppDelegateMethods initTabbarViewControllerIcons:self.tabBarController.tabBar];
