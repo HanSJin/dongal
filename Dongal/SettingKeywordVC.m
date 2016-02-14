@@ -57,7 +57,7 @@
     
     bottomeViewTextView = [[UITextView alloc] initWithFrame:CGRectMake(16, 10, SCR_WIDTH-86, 30)];
     bottomeViewTextView.delegate = self;
-    bottomeViewTextView.backgroundColor = [UIColor colorWithRed:228.0/255.0 green:247.0/255.0 blue:247.0/255.0 alpha:1.0f];
+    bottomeViewTextView.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0f];
     bottomeViewTextView.layer.cornerRadius = 5.0f;
     [bottomView addSubview:bottomeViewTextView];
     
@@ -80,7 +80,6 @@
 
 - (void)initNavigationSetting {
     self.title = @"공지 알람 설정";
-    [self.navigationController.navigationBar setTintColor:GREENT_COLOR];
 }
 
 - (void)setCollegeTableView {
@@ -209,7 +208,7 @@
         NSMutableDictionary *result = [NSJSONSerialization JSONObjectWithData:myData options:NSJSONReadingMutableContainers error:nil];
         
         [keywordTableView beginUpdates];
-        NSIndexPath *index = [NSIndexPath indexPathForRow:keywordData.count inSection:1];
+        NSIndexPath *index = [NSIndexPath indexPathForRow:keywordData.count inSection:2];
         [keywordData insertObject:[NSString stringWithFormat:@"%@", bottomeViewTextView.text] atIndex:keywordData.count];
         [keywordTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:index] withRowAnimation:UITableViewRowAnimationFade];
         [keywordTableView endUpdates];
@@ -251,45 +250,45 @@
     
     [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
         bottomView.frame = CGRectMake(bottomView.frame.origin.x,
-                                      SCR_HEIGHT-49-IS_HOT_SPOT-(bottomeViewTextView.frame.size.height-30),
+                                      SCR_HEIGHT-49-IS_HOT_SPOT-(bottomeViewTextView.frame.size.height-30)-SCR_TAB,
                                       bottomView.frame.size.width,
                                       bottomView.frame.size.height);   //resize
         keywordTableView.frame = CGRectMake(keywordTableView.frame.origin.x,
                                      keywordTableView.frame.origin.y,
                                      keywordTableView.frame.size.width,
-                                     SCR_HEIGHT-50-IS_HOT_SPOT-(bottomeViewTextView.frame.size.height-30));   //resize
+                                     SCR_HEIGHT-50-IS_HOT_SPOT-(bottomeViewTextView.frame.size.height-30)-SCR_TAB);   //resize
     } completion:^(BOOL finished){}];
 }
 
-float lastHeight;
-- (void)textViewDidChange:(UITextView *)textView {
-    CGRect textViewFrame = bottomeViewTextView.frame;
-    CGRect bottomeViewFrame = bottomView.frame;
-    textViewFrame.size.height = bottomeViewTextView.contentSize.height;
-    
-    if (lastHeight < 30)
-        lastHeight = 30;
-    
-    if (textViewFrame.size.height < 30)
-        textViewFrame.size.height = 30;
-    
-    if (textViewFrame.size.height > 100)
-        return;
-    
-    if (textViewFrame.size.height != lastHeight) {
-        bottomeViewFrame.origin.y = bottomeViewFrame.origin.y - (textViewFrame.size.height-lastHeight);
-        bottomeViewFrame.size.height = bottomeViewFrame.size.height + (textViewFrame.size.height-lastHeight);
-        
-        [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            bottomeViewTextView.frame = textViewFrame;
-            bottomView.frame = bottomeViewFrame;   //resize
-        } completion:^(BOOL finished){
-            
-        }];
-        lastHeight = textViewFrame.size.height;
-    }
-    
-}
-
+//float lastHeight;
+//- (void)textViewDidChange:(UITextView *)textView {
+//    CGRect textViewFrame = bottomeViewTextView.frame;
+//    CGRect bottomeViewFrame = bottomView.frame;
+//    textViewFrame.size.height = bottomeViewTextView.contentSize.height;
+//    
+//    if (lastHeight < 30)
+//        lastHeight = 30;
+//    
+//    if (textViewFrame.size.height < 30)
+//        textViewFrame.size.height = 30;
+//    
+//    if (textViewFrame.size.height > 100)
+//        return;
+//    
+//    if (textViewFrame.size.height != lastHeight) {
+//        bottomeViewFrame.origin.y = bottomeViewFrame.origin.y - (textViewFrame.size.height-lastHeight);
+//        bottomeViewFrame.size.height = bottomeViewFrame.size.height + (textViewFrame.size.height-lastHeight);
+//        
+//        [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+//            bottomeViewTextView.frame = textViewFrame;
+//            bottomView.frame = bottomeViewFrame;   //resize
+//        } completion:^(BOOL finished){
+//            
+//        }];
+//        lastHeight = textViewFrame.size.height;
+//    }
+//    
+//}
+//
 
 @end

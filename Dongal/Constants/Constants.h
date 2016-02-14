@@ -61,6 +61,8 @@
 #define SEMI_BLUE_COLOR         [UIColor colorWithRed:47/255.0  green:130/255.0 blue:248/255.0  alpha:1.0]
 #define SEMI_RED_COLOR          [UIColor colorWithRed:251/255.0 green:84/255.0  blue:39/255.0   alpha:1.0]
 #define GREENT_COLOR            [UIColor colorWithRed:26/255.0  green:198/255.0 blue:131/255.0  alpha:1.0]
+#define DONGGUK_COLOR           [UIColor colorWithRed:244/255.0  green:65/255.0 blue:35/255.0  alpha:1.0]
+#define DONGGUK_COLOR_L         [UIColor colorWithRed:243/255.0  green:125/255.0 blue:35/255.0  alpha:1.0]
 
 #define CLEAR_COLOR             [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0  alpha:0.0]
 
