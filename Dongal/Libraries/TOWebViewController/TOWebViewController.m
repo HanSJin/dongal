@@ -517,6 +517,8 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     [super viewWillAppear:animated];
     
     
+    
+    
     //see if we need to show the toolbar
     if (self.navigationController) {
         if (IPAD == NO) { //iPhone
@@ -536,6 +538,12 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
     
     //reset the gradient layer in case the bounds changed before display
     self.gradientLayer.frame = self.view.bounds;
+    
+    
+    
+    
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    [self.navigationBar setTintColor:WHITE_COLOR];
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -39,7 +39,6 @@
 
 - (void)initNavigationSetting {
     self.title = @"공지 알람 설정";
-    [self.navigationController.navigationBar setTintColor:GREENT_COLOR];
 }
 
 - (void)setCollegeTableView {

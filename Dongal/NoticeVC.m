@@ -30,16 +30,19 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    [self initDataObject];
+    [noticeTableView reloadData];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.view setBackgroundColor:WHITE_COLOR];
-    
+    [self.navigationController.navigationBar setBarTintColor:DONGGUK_COLOR];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     [self initNavigationSetting];
     [self setNoticeTableView];
-    [self initDataObject];
     
 }
 
@@ -61,7 +64,7 @@
 }
 
 - (void)initNavigationSetting {
-    [self.navigationController.navigationBar.topItem setTitle:@"동알 앤 동알"];
+    [self.navigationController.navigationBar.topItem setTitle:@"동꾸기"];
 }
 
 - (void)setNoticeTableView {
@@ -121,25 +124,38 @@
     TOWebViewController *webViewController = [[TOWebViewController alloc] initWithURL:[NSURL URLWithString:obj.wr_link]];
     webViewController.pushOrPop = @"psuh";
     webViewController.hidesBottomBarWhenPushed = YES;
+    
     [self.navigationController pushViewController:webViewController animated:YES];
 }
 
 
 
 - (void)launchReload {
-    SingletonData *sharedMan = [SingletonData sharedManager];
-    NSString *params = [NSString stringWithFormat:@"uuid=%@&offset=%lu&limit=%d", sharedMan.UUID, (unsigned long)noticeList.count, 20];
-    NSData *myData = [ConnectionFactory connType:@"GET" connAPI:CONNECT_GET_NOTICE connParam:params];
-    NSMutableDictionary *result = [NSJSONSerialization JSONObjectWithData:myData options:NSJSONReadingMutableContainers error:nil];
     
-    for (NSMutableDictionary *dic in result) {
-        NoticeObj *obj = [[NoticeObj alloc] initWithDictionary:dic];
-        [noticeList addObject:obj];
-    }
-    if ([result count] == 0)
-        endOfLoadMore = YES;
+    UIView *loading = [Customs CSViewRect:self.view.frame backColor:[UIColor colorWithWhite:0 alpha:0.3f]];
+    [self.view addSubview:loading];
     
-    [noticeTableView reloadData];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,0), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            SingletonData *sharedMan = [SingletonData sharedManager];
+            NSString *params = [NSString stringWithFormat:@"uuid=%@&offset=%lu&limit=%d", sharedMan.UUID, (unsigned long)noticeList.count, 20];
+            NSData *myData = [ConnectionFactory connType:@"GET" connAPI:CONNECT_GET_NOTICE connParam:params];
+            NSMutableDictionary *result = [NSJSONSerialization JSONObjectWithData:myData options:NSJSONReadingMutableContainers error:nil];
+            
+            for (NSMutableDictionary *dic in result) {
+                NoticeObj *obj = [[NoticeObj alloc] initWithDictionary:dic];
+                [noticeList addObject:obj];
+            }
+            if ([result count] == 0)
+                endOfLoadMore = YES;
+            
+            [noticeTableView reloadData];
+            
+            [loading removeFromSuperview];
+            
+        });
+    });
 }
 
 - (void)likeButtonTapped:(id)sender {

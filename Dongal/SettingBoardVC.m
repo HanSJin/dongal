@@ -40,7 +40,6 @@
 
 - (void)initNavigationSetting {
     self.title = @"단과대 공지 설정";
-    [self.navigationController.navigationBar setTintColor:GREENT_COLOR];
 }
 
 - (void)setCollegeTableView {

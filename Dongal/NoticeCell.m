@@ -14,13 +14,21 @@
     // Initialization code
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    UIView *circleView = [Customs CSViewRect:CGRectMake(16, 16, 50, 50) backColor:obj.board_color];
-    circleView.layer.cornerRadius = 25;
-    [self addSubview:circleView];
-    [circleView setAlpha:0.5f];
+//    UIView *circleView = [Customs CSViewRect:CGRectMake(16, 16, 50, 50) backColor:obj.board_color];
+//    circleView.layer.cornerRadius = 25;
+//    [self addSubview:circleView];
+//    [circleView setAlpha:0.5f];
+    
+    
+    UIImageView *circleImage = [Customs CSImageViewImg:[UIImage imageNamed:@"circle"] imgPlachHolder:nil imgRect:CGRectMake(16, 16, 50, 50) isCached:NO imgUrl:@"" contentMode:@"AspectFill" backColor:CLEAR_COLOR radius:0 borderWidth:0 borderColor:CLEAR_COLOR];
+    [self addSubview:circleImage];
+    
+    
+    
     UILabel *tableTitme = [Customs CSLabelText:[NSString stringWithFormat:@"%@", obj.board_title]
-                                     LabelRect:circleView.frame textAlign:@"center"
-                                      textFont:FONT_L textSize:0 textColor:WHITE_COLOR backColor:CLEAR_COLOR];
+                                     LabelRect:circleImage.frame textAlign:@"center"
+                                      textFont:FONT_L textSize:0 textColor:DONGGUK_COLOR_L backColor:CLEAR_COLOR];
+    
     [self addSubview:tableTitme];
     
     float leftMargin = 80;
@@ -47,17 +55,18 @@
     
     
     UIButton *likeButton = [Customs CSButtonText:@"" buttonRect:CGRectMake(SCR_WIDTH-50, 53, 50, 50) textFont:FONT_L textSize:0 image:[UIImage imageNamed:@""] textColor:CLEAR_COLOR backColor:CLEAR_COLOR borderWidth:0 borderColor:CLEAR_COLOR cornerRadius:0 align:@"center"];
-    UIImage *image;
-    if ([obj.is_like isEqualToString:@"1"])
-        image = [[UIImage imageNamed:@"ic_favorite"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    else
-        image = [[UIImage imageNamed:@"ic_favorite_border"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIImage *image = [[UIImage imageNamed:@"ic_stars"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     
     
     [likeButton setImage:image forState:UIControlStateNormal];
     [likeButton setImageEdgeInsets:UIEdgeInsetsMake(15, 15, 15, 15)];
     [likeButton setTag:indexPath.row];
-    likeButton.tintColor = GREENT_COLOR;
+    
+    if ([obj.is_like isEqualToString:@"1"])
+        likeButton.tintColor = DONGGUK_COLOR;
+    else
+        likeButton.tintColor = GRAY_COLOR;
+    
     [likeButton addTarget:tableVC action:@selector(likeButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:likeButton];
 

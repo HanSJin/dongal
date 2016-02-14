@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4963EEC51C70730000A9E78B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4963EEC41C70730000A9E78B /* Launch Screen.storyboard */; };
 		4976AA1B1C61CEA500D36B29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4976AA1A1C61CEA500D36B29 /* main.m */; };
 		4976AA1E1C61CEA500D36B29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4976AA1D1C61CEA500D36B29 /* AppDelegate.m */; };
 		4976AA241C61CEA500D36B29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4976AA221C61CEA500D36B29 /* Main.storyboard */; };
 		4976AA261C61CEA500D36B29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4976AA251C61CEA500D36B29 /* Assets.xcassets */; };
-		4976AA291C61CEA500D36B29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4976AA271C61CEA500D36B29 /* LaunchScreen.storyboard */; };
 		4976AA341C61CEA500D36B29 /* DongalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4976AA331C61CEA500D36B29 /* DongalTests.m */; };
 		4976AA3F1C61CEA500D36B29 /* DongalUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4976AA3E1C61CEA500D36B29 /* DongalUITests.m */; };
 		4976AA591C61CF6600D36B29 /* Connection_API_GET.m in Sources */ = {isa = PBXBuildFile; fileRef = 4976AA521C61CF6600D36B29 /* Connection_API_GET.m */; };
@@ -75,13 +75,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4963EEC41C70730000A9E78B /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4976AA161C61CEA500D36B29 /* Dongal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dongal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4976AA1A1C61CEA500D36B29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4976AA1C1C61CEA500D36B29 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4976AA1D1C61CEA500D36B29 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4976AA231C61CEA500D36B29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4976AA251C61CEA500D36B29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4976AA281C61CEA500D36B29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4976AA2A1C61CEA500D36B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4976AA2F1C61CEA500D36B29 /* DongalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DongalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4976AA331C61CEA500D36B29 /* DongalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongalTests.m; sourceTree = "<group>"; };
@@ -336,7 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				4976AA221C61CEA500D36B29 /* Main.storyboard */,
-				4976AA271C61CEA500D36B29 /* LaunchScreen.storyboard */,
+				4963EEC41C70730000A9E78B /* Launch Screen.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -583,8 +583,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4976AA291C61CEA500D36B29 /* LaunchScreen.storyboard in Resources */,
 				4976AA261C61CEA500D36B29 /* Assets.xcassets in Resources */,
+				4963EEC51C70730000A9E78B /* Launch Screen.storyboard in Resources */,
 				4976AA241C61CEA500D36B29 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -694,14 +694,6 @@
 				4976AA231C61CEA500D36B29 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4976AA271C61CEA500D36B29 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4976AA281C61CEA500D36B29 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -40,6 +40,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.view setBackgroundColor:WHITE_COLOR];
+    [self.navigationController.navigationBar setBarTintColor:DONGGUK_COLOR];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     
     noticeList = [[NSMutableArray alloc] init];
     [self initNavigationSetting];
@@ -85,6 +88,7 @@
      the same TableViewController Delegate method used for the main table.*/
     
     searchDisplayController.delegate = self;
+    searchDisplayController.searchResultsDelegate = self;
     searchDisplayController.searchResultsDataSource = self;
     //set the delegate = self. Previously declared in ViewController.h
     
