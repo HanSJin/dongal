@@ -68,6 +68,7 @@
 
 - (void)initNavigationSetting {
     [self.navigationController.navigationBar.topItem setTitle:@"검색"];
+    [self.navigationController.navigationBar setTranslucent:NO];
 }
 
 - (void)setNoticeTableView {

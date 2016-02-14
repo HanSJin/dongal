@@ -66,10 +66,11 @@
 
 - (void)initNavigationSetting {
     [self.navigationController.navigationBar.topItem setTitle:@"설정"];
+    [self.navigationController.navigationBar setTranslucent:NO];
 }
 
 - (void)setNoticeTableView {
-    settingTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCR_WIDTH, SCR_HEIGHT-IS_HOT_SPOT-SCR_TAB)];
+    settingTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCR_WIDTH, SCR_HEIGHT-IS_HOT_SPOT-SCR_TAB-49-64)];
     settingTableView.delegate = self;
     settingTableView.dataSource = self;
     [settingTableView setAllowsSelection:YES];
@@ -98,7 +99,7 @@
 
 
 - (void)setBottomView {
-    bottomView = [Customs CSViewRect:CGRectMake(0, SCR_HEIGHT-SCR_TAB-IS_HOT_SPOT-SCR_TAB, SCR_WIDTH, SCR_TAB) backColor:DONGGUK_COLOR];
+    bottomView = [Customs CSViewRect:CGRectMake(0, SCR_HEIGHT-SCR_TAB-IS_HOT_SPOT-SCR_TAB-64, SCR_WIDTH, SCR_TAB) backColor:DONGGUK_COLOR];
     [self.view addSubview:bottomView];
     
     
@@ -298,13 +299,13 @@
     
     [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
         bottomView.frame = CGRectMake(bottomView.frame.origin.x,
-                                      SCR_HEIGHT-49-keyboardBounds.size.height-IS_HOT_SPOT-(bottomeViewTextView.frame.size.height-30),
+                                      SCR_HEIGHT-49-keyboardBounds.size.height-IS_HOT_SPOT-(bottomeViewTextView.frame.size.height-30)-64,
                                       bottomView.frame.size.width,
                                       bottomView.frame.size.height);   //resize
         settingTableView.frame = CGRectMake(settingTableView.frame.origin.x,
                                             settingTableView.frame.origin.y,
                                             settingTableView.frame.size.width,
-                                            SCR_HEIGHT-keyboardBounds.size.height-IS_HOT_SPOT-(bottomeViewTextView.frame.size.height-30));   //resize
+                                            SCR_HEIGHT-keyboardBounds.size.height-IS_HOT_SPOT-(bottomeViewTextView.frame.size.height)-64-19);   //resize
     } completion:^(BOOL finished){}];
 }
 
@@ -316,13 +317,13 @@
     
     [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
         bottomView.frame = CGRectMake(bottomView.frame.origin.x,
-                                      SCR_HEIGHT-49-IS_HOT_SPOT-(bottomeViewTextView.frame.size.height-30)-SCR_TAB,
+                                      SCR_HEIGHT-49-IS_HOT_SPOT-(bottomeViewTextView.frame.size.height-30)-SCR_TAB-64,
                                       bottomView.frame.size.width,
                                       bottomView.frame.size.height);   //resize
         settingTableView.frame = CGRectMake(settingTableView.frame.origin.x,
                                             settingTableView.frame.origin.y,
                                             settingTableView.frame.size.width,
-                                            SCR_HEIGHT-50-IS_HOT_SPOT-(bottomeViewTextView.frame.size.height-30));   //resize
+                                            SCR_HEIGHT-49-IS_HOT_SPOT-(bottomeViewTextView.frame.size.height-30)-64-49);   //resize
     } completion:^(BOOL finished){}];
 }
 
