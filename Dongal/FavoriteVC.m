@@ -40,7 +40,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.view setBackgroundColor:WHITE_COLOR];
+    [self.view setBackgroundColor:BLACK_COLOR];
     [self.navigationController.navigationBar setBarTintColor:DONGGUK_COLOR];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];

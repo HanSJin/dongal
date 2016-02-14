@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface NoticeVC : UIViewController
+@property(nonatomic, strong) NSString *board_name;
 
 @end

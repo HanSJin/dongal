@@ -22,7 +22,7 @@
     AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     UIViewController *mvc = (UIViewController *)appDelegate.window.rootViewController;
     
-    UIViewController *noticeVC      = [mvc.storyboard instantiateViewControllerWithIdentifier:@"NoticeVC"];
+    UIViewController *noticeVC      = [mvc.storyboard instantiateViewControllerWithIdentifier:@"NoticeTabVC"];
     UIViewController *favoriteVC    = [mvc.storyboard instantiateViewControllerWithIdentifier:@"FavoriteVC"];
     UIViewController *searchVC      = [mvc.storyboard instantiateViewControllerWithIdentifier:@"SearchVC"];
     UIViewController *settingVC     = [mvc.storyboard instantiateViewControllerWithIdentifier:@"SettingVC"];
