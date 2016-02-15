@@ -31,7 +31,6 @@
     self.navigationController.navigationBarHidden = NO;
     self.navigationController.navigationBar.translucent = NO;
     
-    [self reloadData];
 }
 
 
@@ -62,6 +61,8 @@
     
     [self setDataSource:self];
     [self setDelegate:self];
+    
+    [self reloadData];
 }
 
 

@@ -108,6 +108,7 @@
 }
 
 - (void)initNavigationSetting {
+    [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar.topItem setTitle:@"동꾸기"];
 }
 

@@ -68,10 +68,11 @@
 
 - (void)initNavigationSetting {
     [self.navigationController.navigationBar.topItem setTitle:@"스크랩 리스트"];
+    [self.navigationController.navigationBar setTranslucent:NO];
 }
 
 - (void)setNoticeTableView {
-    noticeTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCR_WIDTH, SCR_HEIGHT-IS_HOT_SPOT)];
+    noticeTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCR_WIDTH, SCR_HEIGHT-IS_HOT_SPOT-64-SCR_TAB)];
     noticeTableView.delegate = self;
     noticeTableView.dataSource = self;
     noticeTableView.separatorColor = CLEAR_COLOR;

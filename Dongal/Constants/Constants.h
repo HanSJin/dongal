@@ -34,6 +34,7 @@
 #define CONNECT_POST_KEYWORD            @"/keyword.php"
 #define CONNECT_POST_KEYWORD_STATE      @"/keyword_state.php"
 #define CONNECT_POST_KEYWORD_DELETE     @"/keyword_delete.php"
+#define CONNECT_POST_PUSH               @"/push"
 
 
 
